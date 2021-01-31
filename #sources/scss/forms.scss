@@ -1,0 +1,50 @@
+.quantity {
+  width: 88px;
+  height: 40px;
+  @include flexbox();
+  border: 1px solid rgba(166, 166, 166, 0.45);
+
+  &__button {
+    flex: 0 0 30px;
+    position: relative;
+    cursor: pointer;
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      @include anim(0.3s, 0s);
+      margin: 0 0 0 -4.5px;
+      background-color: #a6a6a6;
+      width: 9px;
+      height: 1px;
+    }
+    @media (min-width: $md2+px) {
+      &:hover {
+        &::before,
+        &::after {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+    }
+    &--plus {
+      &:before {
+        @include rotate(-90deg);
+      }
+    }
+    &--minus {
+    }
+  }
+
+  &__input {
+    flex: 1 1 auto;
+    input {
+      height: 100%;
+      width: 100%;
+      color: #a6a6a6;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+}
