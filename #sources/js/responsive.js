@@ -61,7 +61,7 @@ function resize() {
 
 const menuIcon = document.querySelector(".menu__icon");
 const menu = document.querySelector(".header__menu");
-const links = document.querySelectorAll(".menu-header__link");
+const links = document.querySelectorAll(".menu__link");
 
 menuIcon.addEventListener("click", () => {
   function toggleClass(c) {
