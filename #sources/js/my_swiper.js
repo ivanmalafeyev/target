@@ -1,9 +1,10 @@
-const mySwiper = new Swiper(".main-slider__body", {
+const mySwiper = new Swiper(".item-cases__swiper", {
   // Optional parameters
   // direction: "vertical",
   loop: true,
+  slidesPerView: 1,
   // autoHeight: false,
-  speed: 500,
+  speed: 400,
 
   // If we need pagination
   // pagination: {
@@ -12,20 +13,12 @@ const mySwiper = new Swiper(".main-slider__body", {
 
   // Navigation arrows
   navigation: {
-    nextEl: ".control-main-slider__arrow--next",
-    prevEl: ".control-main-slider__arrow--prev",
+    nextEl: ".controls-cases__btn--next",
+    prevEl: ".controls-cases__btn--prev",
   },
 
   // And if we need scrollbar
   // scrollbar: {
   // el: '.swiper-scrollbar',
   // },
-  breakpoints: {
-    320: {
-      autoHeight: true,
-    },
-    768: {
-      autoHeight: false,
-    },
-  },
 });

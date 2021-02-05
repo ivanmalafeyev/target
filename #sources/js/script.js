@@ -1,13 +1,12 @@
 @@include("webp.js");
 @@include("ibg.js");
-@@include("my_swiper.js");
 @@include("responsive.js");
 @@include("forms.js");
+@@include("my_swiper.js");
 
 const menuHeader = document.querySelector(".header");
 // const links = document.querySelectorAll(".menu__link");
 
-const mainBlock = document.querySelector(".mainblock");
 let scrolled = false;
 const blocks = [];
 let current = -1;
@@ -132,60 +131,61 @@ const itemCases = document.querySelectorAll(".item-cases");
   item.style.top = i * 10 + "px";
 });
 
-const bNext = document.querySelector(".controls-cases__btn--next");
-const bPrev = document.querySelector(".controls-cases__btn--prev");
+// const bNext = document.querySelector(".controls-cases__btn--next");
+// const bPrev = document.querySelector(".controls-cases__btn--prev");
 const sItems = document.querySelector(".cases-content__items").children;
 let currentOpacity = 1;
 let currentZIndex = sItems.length;
 let itIndex = 0;
 if (sItems) {
-  if (bNext) {
-    bNext.addEventListener("click", (e) => {
-      // sItems[itIndex].classList.toggle("_active");
-      sItems[itIndex].style.opacity = currentOpacity;
-      sItems[itIndex].style.zIndex = currentZIndex;
-      if (itIndex < sItems.length - 1) {
-        itIndex++;
-      } else {
-        itIndex = 0;
-      }
-      // sItems[itIndex].classList.toggle("_active");
-      currentOpacity = sItems[itIndex].style.opacity;
-      currentZIndex = sItems[itIndex].style.zIndex;
-      sItems[itIndex].style.opacity = 1;
-      sItems[itIndex].style.zIndex = 100;
-    });
-  }
-  if (bPrev) {
-    bPrev.addEventListener("click", (e) => {
-      // sItems[itIndex].classList.toggle("_active");
-      sItems[itIndex].style.opacity = currentOpacity;
-      sItems[itIndex].style.zIndex = currentZIndex;
-      if (itIndex > 0) {
-        itIndex--;
-      } else {
-        itIndex = sItems.length - 1;
-      }
-      // sItems[itIndex].classList.toggle("_active");
-      currentOpacity = sItems[itIndex].style.opacity;
-      currentZIndex = sItems[itIndex].style.zIndex;
-      sItems[itIndex].style.opacity = 1;
-      sItems[itIndex].style.zIndex = 100;
-    });
-  }
+  // if (bNext) {
+  //   bNext.addEventListener("click", (e) => {
+  //     // sItems[itIndex].classList.toggle("_active");
+  //     sItems[itIndex].style.opacity = currentOpacity;
+  //     sItems[itIndex].style.zIndex = currentZIndex;
+  //     if (itIndex < sItems.length - 1) {
+  //       itIndex++;
+  //     } else {
+  //       itIndex = 0;
+  //     }
+  //     // sItems[itIndex].classList.toggle("_active");
+  //     currentOpacity = sItems[itIndex].style.opacity;
+  //     currentZIndex = sItems[itIndex].style.zIndex;
+  //     sItems[itIndex].style.opacity = 1;
+  //     sItems[itIndex].style.zIndex = 100;
+  //   });
+  // }
+  // if (bPrev) {
+  //   bPrev.addEventListener("click", (e) => {
+  //     // sItems[itIndex].classList.toggle("_active");
+  //     sItems[itIndex].style.opacity = currentOpacity;
+  //     sItems[itIndex].style.zIndex = currentZIndex;
+  //     if (itIndex > 0) {
+  //       itIndex--;
+  //     } else {
+  //       itIndex = sItems.length - 1;
+  //     }
+  //     // sItems[itIndex].classList.toggle("_active");
+  //     currentOpacity = sItems[itIndex].style.opacity;
+  //     currentZIndex = sItems[itIndex].style.zIndex;
+  //     sItems[itIndex].style.opacity = 1;
+  //     sItems[itIndex].style.zIndex = 100;
+  //   });
+  // }
 
   const contentCases = document.querySelector(".content__cases");
-  if (contentCases) {
+  if (contentCases && sItems) {
     contentCases.style.marginBottom =
       +window.getComputedStyle(contentCases).marginBottom.split("px")[0] +
       (sItems.length - 1) * 10 +
       "px";
   }
   const controlsCases = document.querySelector(".controls-cases");
-  if (controlsCases) {
+  if (controlsCases && sItems) {
     controlsCases.style.marginBottom = -(sItems.length - 1) * 10 + "px";
   }
 }
+
 // Spoilers
 const spoilers = document.querySelectorAll("._spoilers");
 if (spoilers) {
