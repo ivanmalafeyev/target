@@ -24,6 +24,35 @@ Array.prototype.forEach.call(img, function (value) {
     value.style.backgroundImage = "url(" + value.querySelector("img").getAttribute("src") + ")";
   }
 });
+;
+var mySwiper = new Swiper(".main-slider__body", {
+  // Optional parameters
+  // direction: "vertical",
+  loop: true,
+  // autoHeight: false,
+  speed: 500,
+  // If we need pagination
+  // pagination: {
+  //   el: '.swiper-pagination',
+  // },
+  // Navigation arrows
+  navigation: {
+    nextEl: ".control-main-slider__arrow--next",
+    prevEl: ".control-main-slider__arrow--prev"
+  },
+  // And if we need scrollbar
+  // scrollbar: {
+  // el: '.swiper-scrollbar',
+  // },
+  breakpoints: {
+    320: {
+      autoHeight: true
+    },
+    768: {
+      autoHeight: false
+    }
+  }
+});
 ; // let w, h;
 // w = window.outerWidth;
 // h = window.outerHeight;
@@ -55,12 +84,6 @@ Array.prototype.forEach.call(img, function (value) {
 //     }
 //   }}
 // }
-// window.addEventListener("resize", () => {
-//   w = window.outerWidth;
-//   h = window.outerHeight;
-//   resize();
-// });
-// resize();
 
 var wo, ho, wi, hi;
 wo = window.outerWidth;
@@ -262,7 +285,7 @@ function toggleClass(c) {
   [].forEach.call(links, function (lnk) {
     lnk.classList.toggle("_active");
   });
-  document.body.classList.toggle("lock");
+  document.body.classList.toggle("_lock");
 } //smooth scroll from first fullscreen to content
 
 
@@ -354,7 +377,7 @@ if (sItems) {
       currentOpacity = sItems[itIndex].style.opacity;
       currentZIndex = sItems[itIndex].style.zIndex;
       sItems[itIndex].style.opacity = 1;
-      sItems[itIndex].style.zIndex = 100000;
+      sItems[itIndex].style.zIndex = 100;
     });
   }
 
@@ -374,7 +397,7 @@ if (sItems) {
       currentOpacity = sItems[itIndex].style.opacity;
       currentZIndex = sItems[itIndex].style.zIndex;
       sItems[itIndex].style.opacity = 1;
-      sItems[itIndex].style.zIndex = 100000;
+      sItems[itIndex].style.zIndex = 100;
     });
   }
 

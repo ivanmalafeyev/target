@@ -1,5 +1,6 @@
 @@include("webp.js");
 @@include("ibg.js");
+@@include("my_swiper.js");
 @@include("responsive.js");
 @@include("forms.js");
 
@@ -64,7 +65,7 @@ function toggleClass(c) {
   [].forEach.call(links, (lnk) => {
     lnk.classList.toggle("_active");
   });
-  document.body.classList.toggle("lock");
+  document.body.classList.toggle("_lock");
 }
 
 //smooth scroll from first fullscreen to content
@@ -152,7 +153,7 @@ if (sItems) {
       currentOpacity = sItems[itIndex].style.opacity;
       currentZIndex = sItems[itIndex].style.zIndex;
       sItems[itIndex].style.opacity = 1;
-      sItems[itIndex].style.zIndex = 100000;
+      sItems[itIndex].style.zIndex = 100;
     });
   }
   if (bPrev) {
@@ -169,7 +170,7 @@ if (sItems) {
       currentOpacity = sItems[itIndex].style.opacity;
       currentZIndex = sItems[itIndex].style.zIndex;
       sItems[itIndex].style.opacity = 1;
-      sItems[itIndex].style.zIndex = 100000;
+      sItems[itIndex].style.zIndex = 100;
     });
   }
 

@@ -32,13 +32,6 @@
 //   }}
 // }
 
-// window.addEventListener("resize", () => {
-//   w = window.outerWidth;
-//   h = window.outerHeight;
-//   resize();
-// });
-
-// resize();
 let wo, ho, wi, hi;
 wo = window.outerWidth;
 ho = window.outerHeight;
